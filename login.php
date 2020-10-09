@@ -12,35 +12,30 @@
 <body>
     <div class="cont">
         <div class="form sign-in">
+        <br>
+        <br>
             <h2>Login</h2>
             <label>
-        <span>Email</span>
-        <input type="email" name="email">
+        <span>Nama</span>
+        <input type="nama" name="nama">
       </label>
             <label>
         <span>Password</span>
         <input type="password" name="password">
       </label>
             <button class="submit" type="button">Login</button>
-            <p class="forgot-pass">Lupa Password ?</p>
 
-            <div class="social-media">
-                <ul>
-                    <li><img src="images/facebook.png"></li>
-                    <li><img src="images/twitter.png"></li>
-                    <li><img src="images/linkedin.png"></li>
-                    <li><img src="images/instagram.png"></li>
-                </ul>
-            </div>
         </div>
 
         <div class="sub-cont">
             <div class="img">
                 <div class="img-text m-up">
+                    <br> <br> <br> <br> <br>
                     <h2>Belum punya akun?</h2>
                     <p>Daftar Sekarang</p>
                 </div>
                 <div class="img-text m-in">
+                    <br> <br> <br> <br> <br>
                     <h2>Sudah Mendaftar</h2>
                     <p>Silahkan Login</p>
                 </div>
@@ -58,15 +53,11 @@
                     <input type="text">
                 </label>
                 <label>
-                    <span>Email</span>
-                    <input type="email">
+                    <span>NIM</span>
+                    <input type="text">
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password">
-                </label>
-                <label>
-                    <span>Confirm Password</span>
                     <input type="password">
                 </label>
                 <button type="button" class="submit" id="sign-up">Sign Up Now</button>
