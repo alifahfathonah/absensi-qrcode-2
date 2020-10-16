@@ -1,3 +1,43 @@
+<?php
+SESSION_START();
+include "database.php";
+
+$db = new Database();
+
+$nim_nip = (isset($_SESSION['nim_nip'])) ? $_SESSION['nim_nip'] : "";
+$token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";
+
+if($token && $nim_nip){
+    // Query dosen
+    $result = $db->execute("SELECT * FROM dosen_tbl WHERE nip = '".$nim_nip."' AND token = '".$token."'");
+
+    // If dosen, ...
+    if($result){
+        // Redirect to dashboard dosen
+        header("Location: user/dosen/dashboarddosen.php");
+    }
+    // If not dosen, ...
+    else{
+        $result = $db->execute("SELECT * FROM mahasiswa_tbl WHERE nim = '".$nim_nip."' AND token = '".$token."'");
+
+        // If mahasiswa, ...
+        if($result){
+            // Redirect to dashboard mahasiswa
+            header("Location: user/mahasiswa/dashboardmahasiswa.php");
+        }
+    }
+}
+
+// Get notification
+$notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] : "";
+
+if($notification){
+    echo $notification;
+    unset($_SESSION['notification']);
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
