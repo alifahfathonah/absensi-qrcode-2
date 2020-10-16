@@ -18,6 +18,7 @@ if($token && $nim_nip){
     }
     // If not dosen, ...
     else{
+        // Query mahasiswa
         $result = $db->execute("SELECT * FROM mahasiswa_tbl WHERE nim = '".$nim_nip."' AND token = '".$token."'");
 
         // If mahasiswa, ...
