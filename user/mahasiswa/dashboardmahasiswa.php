@@ -10,19 +10,19 @@
     <title>DASHBOARD | ABSENSI CODE QR</title>
 
     <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="../../img/favicon.png" rel="icon">
+    <link href="../../img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Bootstrap core CSS -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
-    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css" />
+    <link href="../../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../../css/zabuto_calendar.css">
+    <link rel="stylesheet" type="text/css" href="../../lib/gritter/css/jquery.gritter.css" />
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet">
-    <script src="lib/chart-master/Chart.js"></script>
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/style-responsive.css" rel="stylesheet">
+    <script src="../../lib/chart-master/Chart.js"></script>
 
     <!-- =======================================================
     Template Name: Dashio
@@ -43,11 +43,11 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="dashboarddosen.php" class="logo"><b>DASHBOARD <span>DOSEN</span></b></a>
+            <a href="dashboardmahasiswa.php" class="logo"><b>DASHBOARD <span>MAHASISWA</span></b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="index.php">Logout</a></li>
+                    <li><a class="logout" href="../../index.php">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -62,7 +62,7 @@
                 <ul class="sidebar-menu" id="nav-accordion">
                     <p class="centered">
                         <a href="profile.html">
-                            <img src="img/ui-sam.jpg" class="img-circle" width="80">
+                            <img src="../../img/ui-sam.jpg" class="img-circle" width="80">
                         </a>
                     </p><br>
                     <h5 class="centered">Sam Soffes</h5>
@@ -99,7 +99,7 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-md-5">
-                                            <p><img src="img/code.png" width="80"></p>
+                                            <p><img src="../../img/code.png" width="80"></p>
                                         </div>
                                         <div class="col-md-5">
                                             <div class="text-left">
@@ -109,7 +109,7 @@
                                             </div>
                                         </div>
                                     </div> <br>
-                                    <button class="btn btn-small btn-theme03">ADD ABSEN</button>
+                                    <button class="btn btn-small btn-theme03">SUBMIT</button>
                                 </div>
                             </div>
 
@@ -118,8 +118,6 @@
                 </div>
             </section>
         </section>
-        <!-- /row -->
-    </section>
     </section>
     <!--main content end-->
     <!--footer start-->
@@ -144,20 +142,20 @@
     <!--footer end-->
     </section>
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="../../lib/jquery/jquery.min.js"></script>
 
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="lib/jquery.scrollTo.min.js"></script>
-    <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="lib/jquery.sparkline.js"></script>
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="../../lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="../../lib/jquery.scrollTo.min.js"></script>
+    <script src="../../lib/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="../../lib/jquery.sparkline.js"></script>
     <!--common script for all pages-->
-    <script src="lib/common-scripts.js"></script>
-    <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="lib/gritter-conf.js"></script>
+    <script src="../../lib/common-scripts.js"></script>
+    <script type="text/javascript" src="../../lib/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="../../lib/gritter-conf.js"></script>
     <!--script for this page-->
-    <script src="lib/sparkline-chart.js"></script>
-    <script src="lib/zabuto_calendar.js"></script>
+    <script src="../../lib/sparkline-chart.js"></script>
+    <script src="../../lib/zabuto_calendar.js"></script>
     <script type="application/javascript">
         $(document).ready(function() {
             $("#date-popover").popover({
