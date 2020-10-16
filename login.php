@@ -57,7 +57,7 @@ if($notification){
         <br>
         <br>
             <h2>Login</h2>
-            <form action="" method="post">
+            <form action="login/login_process.php" method="post">
                 <!--NAMA-->
                 <label>
                     <span>NIM/NIP</span>
