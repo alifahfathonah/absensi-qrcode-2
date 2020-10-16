@@ -43,7 +43,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHBOARD <span>MAHASISWA</span></b></a>
+            <a href="dashboardmahasiswa.php" class="logo"><b>DASHBOARD <span>MAHASISWA</span></b></a>
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
@@ -61,7 +61,9 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <p class="centered">
-                        <a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a>
+                        <a href="profile.html">
+                            <img src="img/ui-sam.jpg" class="img-circle" width="80">
+                        </a>
                     </p><br>
                     <h5 class="centered">Sam Soffes</h5>
                     <h5 class="centered">123456789</h5><br><br>
@@ -86,7 +88,7 @@
                             <!-- /col-md-8  -->
                         </div>
                         <div class="row">
-                            <!-- TWITTER PANEL -->
+                            <!-- ABSEN PANEL -->
                             <!-- <div class="col-md-4 mb"> -->
                             <div class="col-md-4 mb">
                                 <!-- WHITE PANEL - TOP USER -->
@@ -110,116 +112,7 @@
                                     <button class="btn btn-small btn-theme03">SUBMIT</button>
                                 </div>
                             </div>
-                            <div class="col-md-4 mb">
-                                <!-- WHITE PANEL - TOP USER -->
-                                <div class="white-panel pn">
-                                    <div class="white-header">
-                                        <h5>@Nama Mata Kuliah</h5>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p><img src="img/code.png" width="80"></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="text-left">
-                                                <p>Pertemuan Ke : </p>
-                                                <p>Tanggal : </p>
-                                                <p>Departemen : </p>
-                                            </div>
-                                        </div>
-                                    </div> <br>
-                                    <button class="btn btn-small btn-theme03">SUBMIT</button>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb">
-                                <!-- WHITE PANEL - TOP USER -->
-                                <div class="white-panel pn">
-                                    <div class="white-header">
-                                        <h5>@Nama Mata Kuliah</h5>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p><img src="img/code.png" width="80"></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="text-left">
-                                                <p>Pertemuan Ke : </p>
-                                                <p>Tanggal : </p>
-                                                <p>Departemen : </p>
-                                            </div>
-                                        </div>
-                                    </div> <br>
-                                    <button class="btn btn-small btn-theme03">SUBMIT</button>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb">
-                                <!-- WHITE PANEL - TOP USER -->
-                                <div class="white-panel pn">
-                                    <div class="white-header">
-                                        <h5>@Nama Mata Kuliah</h5>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p><img src="img/code.png" width="80"></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="text-left">
-                                                <p>Pertemuan Ke : </p>
-                                                <p>Tanggal : </p>
-                                                <p>Departemen : </p>
-                                            </div>
-                                        </div>
-                                    </div> <br>
-                                    <button class="btn btn-small btn-theme03">SUBMIT</button>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb">
-                                <!-- WHITE PANEL - TOP USER -->
-                                <div class="white-panel pn">
-                                    <div class="white-header">
-                                        <h5>@Nama Mata Kuliah</h5>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p><img src="img/code.png" width="80"></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="text-left">
-                                                <p>Pertemuan Ke : </p>
-                                                <p>Tanggal : </p>
-                                                <p>Departemen : </p>
-                                            </div>
-                                        </div>
-                                    </div> <br>
-                                    <button class="btn btn-small btn-theme03">SUBMIT</button>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb">
-                                <!-- WHITE PANEL - TOP USER -->
-                                <div class="white-panel pn">
-                                    <div class="white-header">
-                                        <h5>@Nama Mata Kuliah</h5>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p><img src="img/code.png" width="80"></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="text-left">
-                                                <p>Pertemuan Ke : </p>
-                                                <p>Tanggal : </p>
-                                                <p>Departemen : </p>
-                                            </div>
-                                        </div>
-                                    </div> <br>
-                                    <button class="btn btn-small btn-theme03">SUBMIT</button>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
