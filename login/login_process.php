@@ -22,12 +22,12 @@ if($result){
     $_SESSION['nim_nip'] = $nim_nip;
 
     // Go to dashboarddosen.php
-    header("Location: user/dosen/dashboarddosen.php");
+    header("Location: ../user/dosen/dashboarddosen.php");
 }
 // If not dosen, ...
 else{
     // Query mahasiswa
-    $result = $db->get("SELECT nim FROM mahasiswa_tbl WHERE nip = '".$nim_nip."' AND password = '".$password."'");
+    $result = $db->get("SELECT nim FROM mahasiswa_tbl WHERE nim = '".$nim_nip."' AND password = '".$password."'");
 
     // If mahasiswa, ...
     if($result){
@@ -41,11 +41,12 @@ else{
         $_SESSION['nim_nip'] = $nim_nip;
 
         // Go to dashboarddosen.php
-        header("Location: user/mahasiswa/dashboardmahasiswa.php");
+        header("Location: ../user/mahasiswa/dashboardmahasiswa.php");
+    }
+    // Login failed as dosen and mahasiswa
+    else{
+        $_SESSION["notification"] = "Gagal login, coba lagi";
+        // Go back to login.php
+        header('Location: ../login.php');
     }
 }
-
-// Login failed
-$_SESSION['notification'] = "Gagal login, coba lagi";
-// Go back to login.php
-header('Location: ../login.php');
