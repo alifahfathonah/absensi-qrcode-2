@@ -43,6 +43,6 @@ class Database{
      */
     function getProcedureExecute($procedure){
         include "database_connect.php";
-        return mysqli_query($connection,, "CALL " . $procedure);
+        return mysqli_query($connection, "CALL " . $procedure);
     }
 }
