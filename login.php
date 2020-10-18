@@ -99,29 +99,37 @@ if($notification){
             <div class="form sign-up" id="signup">
                 <div class="signup"></div>
                 <h2>Sign up</h2>
-                <form action="" method="post">
+                <form action="login/register_process.php" method="post">
+                    <label>
+                        <span>Daftar sebagai: </span>
+                        <select name="mhs_or_dosen">
+                            <option value="1">Dosen</option>
+                            <option value="2">Mahasiswa</option>
+                        </select>
+                    </label>
+
                     <!--NAMA-->
                     <label>
-                        <span>Nama</span>
-                        <input type="text" name="nama">
+                        <span>Nama Lengkap</span>
+                        <input type="text" name="nama_lengkap" required>
                     </label>
 
                     <!--NIM-->
                     <label>
                         <span>NIM/NIP</span>
-                        <input type="text" name="nim_nip">
+                        <input type="text" name="nim_nip" required>
                     </label>
 
                     <!--PASSWORD-->
                     <label>
                         <span>Password</span>
-                        <input type="password" name="password">
+                        <input type="password" name="password" required>
                     </label>
 
                     <!--CONFIRM PASSWORD-->
                     <label>
                         <span>Confirm Password</span>
-                        <input type="password" name="password2">
+                        <input type="password" name="password2" required>
                     </label>
 
                     <!--SUBMIT-->
