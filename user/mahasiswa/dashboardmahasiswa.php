@@ -77,49 +77,25 @@
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
         <!--main content start-->
-        <section id="main-content">
+        <section id="main-content"> 
             <section class="wrapper">
-                <div class="row">
-                    <div class="col-lg-12 main-chart">
-                        <!--CUSTOM CHART START -->
-
-                        <div class="row mt">
-                            <!-- SERVER STATUS PANELS -->
-                            <!-- /col-md-8  -->
-                        </div>
-                        <div class="row">
-                            <!-- ABSEN PANEL -->
-                            <!-- <div class="col-md-4 mb"> -->
-                            <div class="col-md-4 mb">
-                                <!-- WHITE PANEL - TOP USER -->
-                                <div class="white-panel pn">
-                                    <div class="white-header">
-                                        <h5>@Nama Mata Kuliah</h5>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p><img src="../../img/code.png" width="80"></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="text-left">
-                                                <p>Pertemuan Ke : </p>
-                                                <p>Tanggal : </p>
-                                                <p>Departemen : </p>
-                                            </div>
-                                        </div>
-                                    </div> <br>
-                                    <button class="btn btn-small btn-theme03">SUBMIT</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                <!--  TODO PANEL -->
+                <!-- /col-md-4 --> 
+                <br><br>
+                <div class="col-md-12 col-sm-4 mb">
+                <div class="green-panel pn">
+                  <div class="green-header">
+                    <h5>Silahkan Scan</h5>
+                  </div>
+                  <p><img src="../../img/code.png" width="100"></p>
+                  <h3>@Keterangan Hasil Scan</h3>
+                  <button class="btn btn-small btn-theme03">SUBMIT</button>
                 </div>
+              </div>
             </section>
         </section>
-    </section>
     <!--main content end-->
+
     <!--footer start-->
     <footer class="site-footer">
         <div class="text-center">

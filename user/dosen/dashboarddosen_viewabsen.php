@@ -83,11 +83,6 @@
                 <div class="row">
                     <div class="col-lg-12 main-chart">
                         <!--CUSTOM CHART START -->
-
-                        <div class="row mt">
-                            <!-- SERVER STATUS PANELS -->
-                            <!-- /col-md-8  -->
-                        </div>
                         <div class="row">
                             <!-- ABSEN PANEL -->
                             <!-- <div class="col-md-4 mb"> -->
@@ -95,9 +90,10 @@
                                 <!-- WHITE PANEL - TOP USER -->
                                 <div class="white-panel pn">
                                     <div class="white-header">
+                                        <br>
                                         <h5>@Nama Mata Kuliah</h5>
                                     </div>
-                                    <br>
+                                    <br><br>
                                     <div class="row">
                                         <div class="col-md-5">
                                             <p><img src="../../img/code.png" width="80"></p>
@@ -109,20 +105,122 @@
                                                 <p>Departemen : </p>
                                             </div>
                                         </div>
-                                    </div> <br>
-                                    <button class="btn btn-small btn-theme03">ADD ABSEN</button>
+                                    </div> 
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-            </section>
-        </section>
         <!-- /row -->
+
+         <!--main content end-->
+
+            <!--main content start-->     
+                <!-- row -->
+                <div class="row mt">
+                <div class="col-md-12">
+                    <div class="content-panel">
+                    <table class="table table-striped table-advance table-hover">
+                        <h4><i class="fa fa-angle-right"></i> Detail Absen </h4>
+                        <hr>
+                        <thead>
+                        <tr>
+                            <th> NO </th>
+                            <th><i class=""></i> Nama Mata Kuliah </th>
+                            <th class=""><i class=""></i> Kelas </th>
+                            <th><i class=""></i> Departement</th>
+                            <th><i class=""></i> Tanggal </th>
+                            <th><i class=""></i> Pertemuan</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                            <a href="basic_table.html#">Company Ltd</a>
+                            </td>
+                            <td class="hidden-phone">Lorem Ipsum dolor</td>
+                            <td>12000.00$ </td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>
+                            <a href="basic_table.html#">
+                                Dashio co
+                                </a>
+                            </td>
+                            <td class="hidden-phone">Lorem Ipsum dolor</td>
+                            <td>17900.00$ </td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                            <a href="basic_table.html#">
+                                Another Co
+                                </a>
+                            </td>
+                            <td class="hidden-phone">Lorem Ipsum dolor</td>
+                            <td>14400.00$ </td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>
+                            <a href="basic_table.html#">Dashio ext</a>
+                            </td>
+                            <td class="hidden-phone">Lorem Ipsum dolor</td>
+                            <td>22000.50$ </td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>
+                            <a href="basic_table.html#">Total Ltd</a>
+                            </td>
+                            <td class="hidden-phone">Lorem Ipsum dolor</td>
+                            <td>12120.00$ </td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <!-- /content-panel -->
+                </div>
+                <!-- /col-md-12 -->
+                </div>
+        <!-- /row -->
+        </section>
     </section>
-    </section>
-    <!--main content end-->
+    <!-- /MAIN CONTENT -->
+
     <!--footer start-->
     <footer class="site-footer">
         <div class="text-center">

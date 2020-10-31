@@ -77,52 +77,67 @@
         <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
-        <!--main content start-->
-        <section id="main-content">
-            <section class="wrapper">
-                <div class="row">
-                    <div class="col-lg-12 main-chart">
-                        <!--CUSTOM CHART START -->
-
-                        <div class="row mt">
-                            <!-- SERVER STATUS PANELS -->
-                            <!-- /col-md-8  -->
-                        </div>
-                        <div class="row">
-                            <!-- ABSEN PANEL -->
-                            <!-- <div class="col-md-4 mb"> -->
-                            <div class="col-md-4 mb">
-                                <!-- WHITE PANEL - TOP USER -->
-                                <div class="white-panel pn">
-                                    <div class="white-header">
-                                        <h5>@Nama Mata Kuliah</h5>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p><img src="../../img/code.png" width="80"></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="text-left">
-                                                <p>Pertemuan Ke : </p>
-                                                <p>Tanggal : </p>
-                                                <p>Departemen : </p>
-                                            </div>
-                                        </div>
-                                    </div> <br>
-                                    <button class="btn btn-small btn-theme03">ADD ABSEN</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
         <!-- /row -->
+        <!-- FORM VALIDATION -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <h4><i class="fa fa-angle-right"></i> New Absen </h4>
+            <div class="form-panel">
+              <div class=" form">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="get" action="">
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2"> Nama Mata Kuliah </label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control " id="ccomment" name="comment" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2"> Kelas </label>
+                    <div class="col-lg-10">
+                    <textarea class="form-control " id="ccomment" name="comment" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2"> Departement </label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control " id="ccomment" name="comment" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2"> Pertemuan </label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control " id="ccomment" name="comment" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="ccomment" class="control-label col-lg-2"> Tanggal </label>
+                    <div class="col-lg-10">
+                      <textarea class="form-control " id="ccomment" name="comment" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Save</button>
+                      <button class="btn btn-theme04" type="button">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
     </section>
-    </section>
+    <!-- /MAIN CONTENT -->
     <!--main content end-->
+
     <!--footer start-->
     <footer class="site-footer">
         <div class="text-center">
