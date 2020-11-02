@@ -99,9 +99,7 @@ if($notification){
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
                     <p class="centered">
-                        <a href="profile.html">
-                            <img src="../../img/ui-sam.jpg" class="img-circle" width="80">
-                        </a>
+                        <img src="../../assets/img/profil.jpg" class="img-circle" width="80">
                     </p><br>
                     <h5 class="centered"><?php echo $userdata['nama_lengkap']?></h5>
                     <h5 class="centered"><?php echo $userdata['nim']?></h5><br><br>
