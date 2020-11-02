@@ -126,88 +126,18 @@
                             <thead>
                             <tr>
                                 <th> NO </th>
-                                <th><i class=""></i> Nama Mata Kuliah </th>
-                                <th class=""><i class=""></i> Kelas </th>
-                                <th><i class=""></i> Departement</th>
-                                <th><i class=""></i> Tanggal </th>
-                                <th><i class=""></i> Pertemuan</th>
-                                <th></th>
+                                <th><i class=""></i>NIM</th>
+                                <th><i class=""></i>Nama Mahasiswa</th>
+                                <th><i class=""></i>Tanggal Absen</th>
                             </tr>
                             </thead>
+
                             <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>
-                                    <a href="basic_table.html#">Company Ltd</a>
-                                </td>
-                                <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                <td>12000.00$ </td>
+                                <td>D1211181001</td>
+                                <td>Alfian Aldy Hamdani</td>
                                 <td>1</td>
-                                <td>1</td>
-                                <td>
-                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>
-                                    <a href="basic_table.html#">
-                                        Dashio co
-                                    </a>
-                                </td>
-                                <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                <td>17900.00$ </td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>
-                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>
-                                    <a href="basic_table.html#">
-                                        Another Co
-                                    </a>
-                                </td>
-                                <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                <td>14400.00$ </td>
-                                <td>3</td>
-                                <td>3</td>
-                                <td>
-                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>
-                                    <a href="basic_table.html#">Dashio ext</a>
-                                </td>
-                                <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                <td>22000.50$ </td>
-                                <td>4</td>
-                                <td>4</td>
-                                <td>
-                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>
-                                    <a href="basic_table.html#">Total Ltd</a>
-                                </td>
-                                <td class="hidden-phone">Lorem Ipsum dolor</td>
-                                <td>12120.00$ </td>
-                                <td>5</td>
-                                <td>5</td>
-                                <td>
-                                    <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                                </td>
                             </tr>
                             </tbody>
                         </table>

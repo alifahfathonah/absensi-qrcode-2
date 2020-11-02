@@ -110,7 +110,10 @@
                                             </div>
                                         </div>
                                     </div> <br>
-                                    <button class="btn btn-small btn-theme03">ADD ABSEN</button>
+
+                                    <a class="logout" href="view_absen.php">
+                                        <button class="btn btn-small btn-theme03">Lihat absen</button>
+                                    </a>
                                 </div>
                             </div>
 
