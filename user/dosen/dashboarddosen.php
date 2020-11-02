@@ -47,7 +47,7 @@
             <!--logo end-->
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="../../index.php">+</a></li>
+                    <li><a class="logout" href="add_absen.php">+</a></li>
                     <li><a class="logout" href="../../index.php">Logout</a></li>
                 </ul>
             </div>
