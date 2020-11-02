@@ -1,3 +1,41 @@
+<?php
+SESSION_START();
+include "../../database.php";
+
+$db = new Database();
+
+$nim = (isset($_SESSION['nim_nip'])) ? $_SESSION['nim_nip'] : "";
+$token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";
+
+if($token && $nim){
+    // Query mahasiswa
+    $result = $db->execute("SELECT * FROM mahasiswa_tbl
+WHERE nim = '".$nim."' AND token = '".$token."'");
+
+    // If not mahasiswa, ...
+    if(!$result){
+        // Redirect to login
+        header("Location: ../../login.php");
+    }
+
+    $userdata = $db->get("SELECT nim, nama_lengkap
+    FROM mahasiswa_tbl
+    WHERE nim = '".$nim."'");
+
+    $userdata = mysqli_fetch_assoc($userdata);
+} else{
+    header("Location: ../../login.php");
+}
+
+$notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] : "";
+
+if($notification){
+    echo $notification;
+    unset($_SESSION['notification']);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,8 +103,8 @@
                             <img src="../../img/ui-sam.jpg" class="img-circle" width="80">
                         </a>
                     </p><br>
-                    <h5 class="centered">Sam Soffes</h5>
-                    <h5 class="centered">123456789</h5><br><br>
+                    <h5 class="centered"><?php echo $userdata['nama_lengkap']?>></h5>
+                    <h5 class="centered"><?php echo $userdata['nim']?></h5><br><br>
 
                 </ul>
                 <!-- sidebar menu end-->
