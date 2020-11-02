@@ -37,4 +37,3 @@ VALUES('".$nim_nip."', '".$nama_lengkap."', '".$password."', '".$token."')");
 }
 
 header("Location: ../login.php");
-$_SESSION['notification'] = "Register user gagal";
