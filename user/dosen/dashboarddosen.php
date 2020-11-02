@@ -1,3 +1,41 @@
+<?php
+SESSION_START();
+include "../../database.php";
+
+$db = new Database();
+
+$nip = (isset($_SESSION['nim_nip'])) ? $_SESSION['nim_nip'] : "";
+$token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";
+
+if($token && $nip){
+    // Query dosen
+    $result = $db->execute("SELECT * FROM dosen_tbl
+WHERE nip = '".$nip."' AND token = '".$token."'");
+
+    // If not dosen, ...
+    if(!$result){
+        // Redirect to login
+        header("Location: ../../login.php");
+    }
+
+    $userdata = $db->get("SELECT nip, nama_lengkap
+    FROM dosen_tbl
+    WHERE nip = '".$nip."'");
+
+    $userdata = mysqli_fetch_assoc($userdata);
+} else{
+    header("Location: ../../login.php");
+}
+
+$notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] : "";
+
+if($notification){
+    echo $notification;
+    unset($_SESSION['notification']);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,8 +104,8 @@
                             <img src="../../img/ui-sam.jpg" class="img-circle" width="80">
                         </a>
                     </p><br>
-                    <h5 class="centered">Sam Soffes</h5>
-                    <h5 class="centered">123456789</h5><br><br>
+                    <h5 class="centered"><?php echo $userdata['nama_lengkap']?></h5>
+                    <h5 class="centered"><?php echo $userdata['nip']?></h5><br><br>
 
                 </ul>
                 <!-- sidebar menu end-->

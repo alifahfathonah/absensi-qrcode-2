@@ -1,4 +1,5 @@
 <?php
+SESSION_START();
 include "../database.php";
 
 $db = new Database();
@@ -40,7 +41,7 @@ else{
         $_SESSION['token'] = $token;
         $_SESSION['nim_nip'] = $nim_nip;
 
-        // Go to dashboarddosen.php
+        // Go to dashboardmahasiswa.php
         header("Location: ../user/mahasiswa/dashboardmahasiswa.php");
     }
     // Login failed as dosen and mahasiswa

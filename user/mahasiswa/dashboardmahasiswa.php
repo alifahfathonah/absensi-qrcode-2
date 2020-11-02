@@ -103,7 +103,7 @@ if($notification){
                             <img src="../../img/ui-sam.jpg" class="img-circle" width="80">
                         </a>
                     </p><br>
-                    <h5 class="centered"><?php echo $userdata['nama_lengkap']?>></h5>
+                    <h5 class="centered"><?php echo $userdata['nama_lengkap']?></h5>
                     <h5 class="centered"><?php echo $userdata['nim']?></h5><br><br>
 
                 </ul>
