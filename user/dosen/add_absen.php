@@ -123,18 +123,23 @@ if($notification){
                     <h4><i class="fa fa-angle-right"></i> New Absen </h4>
                     <div class="form-panel">
                         <div class=" form">
+
+<!--                            FORM-->
                             <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="process/add_absen_process.php">
+
+<!--                                NAMA MATKUL-->
                                 <div class="form-group ">
                                     <label for="comment" class="control-label col-lg-2">Nama Mata Kuliah </label>
                                     <div class="col-lg-10">
-                                        <input class="form-control" type="text" name="nama_matkul">
+                                        <input class="form-control" type="text" name="nama_matkul" required>
                                     </div>
                                 </div>
 
+<!--                                KELAS-->
                                 <div class="form-group ">
                                     <label for="ccomment" class="control-label col-lg-2">Kelas </label>
                                     <div class="col-lg-10">
-                                        <select class="form-control" name="kelas">
+                                        <select class="form-control" name="kelas" required>
                                             <option value="a">A</option>
                                             <option value="b">B</option>
                                             <option value="c">C</option>
@@ -142,30 +147,33 @@ if($notification){
                                     </div>
                                 </div>
 
+<!--                                DEPARTEMEN-->
                                 <div class="form-group ">
-                                    <label for="ccomment" class="control-label col-lg-2">Departement </label>
+                                    <label for="comment" class="control-label col-lg-2">Program Studi</label>
                                     <div class="col-lg-10">
-                                        <input class="form-control" type="text" name="departemen">
+                                        <input class="form-control" type="text" name="program_studi" required>
                                     </div>
                                 </div>
 
+<!--                                PERTEMUAN-->
                                 <div class="form-group ">
-                                    <label for="ccomment" class="control-label col-lg-2">Pertemuan </label>
+                                    <label for="comment" class="control-label col-lg-2">Pertemuan </label>
                                     <div class="col-lg-10">
-                                        <input class="form-control" type="number" name="pertemuan">
+                                        <input class="form-control" type="number" name="pertemuan" required>
                                     </div>
                                 </div>
 
+<!--                                TANGGAL-->
                                 <div class="form-group ">
-                                    <label for="ccomment" class="control-label col-lg-2">Tanggal </label>
+                                    <label for="comment" class="control-label col-lg-2">Tanggal </label>
                                     <div class="col-lg-10">
-                                        <input class="form-control" type="date" name="tanggal">
+                                        <input class="form-control" type="date" name="tanggal" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
-                                        <button class="btn btn-theme" type="submit">Save</button>
+                                        <button class="btn btn-theme" type="submit">Submit</button>
                                         <button class="btn btn-theme04" type="button">Cancel</button>
                                     </div>
                                 </div>
