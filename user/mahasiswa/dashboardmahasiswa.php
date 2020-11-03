@@ -118,21 +118,26 @@ if($notification){
             <!-- /col-md-4 -->
             <br><br>
             <div class="col-md-12 col-sm-4 mb">
-                <div class="green-panel pn">
+                <div class="green-panel">
                     <div class="green-header">
-                        <h5>Silakan Scan</h5>
-                    </div>
-                    <p>
-                        <a id="btn-scan-qr">
-                            <img src="../../img/code.png" width="100">
-                        </a>
-                    </p>
+                        <h3>Click QR Below</h3>
+                        <p>
+                            <a href="#" id="btn-scan-qr">
+                                <img src="../../img/code.png" width="100">
+                            </a>
+                        </p>
 
-                    <canvas hidden="" id="qr-canvas"></canvas>
-                    <div id="qr-result" hidden="">
-                        <b>Data:</b>
-                        <span id="outputData"></span>
-                        <button class="btn btn-small btn-theme03">SUBMIT</button>
+                        <canvas hidden="" id="qr-canvas"></canvas>
+                        <br>
+                        <div hidden="" class="text-center" id="qr-result">
+                            <p>
+                                Data:
+                                <span id="outputData"></span>
+                            </p>
+                            <p class="mb">
+                                <button class="btn btn-small btn-theme03">SUBMIT</button>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

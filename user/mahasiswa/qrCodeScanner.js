@@ -10,21 +10,25 @@ const btnScanQR = document.getElementById("btn-scan-qr");
 
 let scanning = false;
 
+// Scan
 qrcodes.callback = res => {
+    // If result is true, ...
     if(res){
         outputData.innerText = res;
         scanning = false;
 
+        // Stop video
         video.srcObject.getTracks().forEach(track => {
             track.stop();
         })
 
-        qrResult.hidden = false;
-        canvasElement.hidden = false;
-        btnScanQR.hidden = false;
+        qrResult.hidden = false; // Show result
+        canvasElement.hidden = true; // Hide canvas
+        btnScanQR.hidden = false; // Show scan button again
     }
 };
 
+// When scan button on click, ...
 btnScanQR.onclick = () => {
     navigator.mediaDevices
         .getUserMedia({ video : {facingMode: "environment" } })
@@ -36,9 +40,9 @@ btnScanQR.onclick = () => {
             video.setAttribute("playsinline", true);
 
             video.srcObject = stream;
-            video.play();
-            tick();
-            scan();
+            video.play(); // Show video
+            tick(); // Set canvas
+            scan(); // Scan QRCode
         });
 };
 
