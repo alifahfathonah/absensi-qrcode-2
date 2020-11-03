@@ -35,7 +35,7 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
 
         $add_form = $db->execute("INSERT INTO absen_form_tbl(nip, nama_matkul, kelas, program_studi, pertemuan, tanggal, qrcode)
 VALUES('".$nip."', '".$nama_matkul."', '".$kelas."',
-'".$pertemuan."', '".$program_studi."', '".$tanggal."', '".$qrcode."')");
+'".$program_studi."', '".$pertemuan."', '".$tanggal."', '".$qrcode."')");
 
         if($add_form){
             $_SESSION['notification'] = "Berhasil menambah absen";

@@ -18,11 +18,17 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
         header("Location: ../../login.php");
     }
 
+    // Get user data
     $userdata = $db->get("SELECT nip, nama_lengkap
     FROM dosen_tbl
     WHERE nip = '".$nip."'");
 
     $userdata = mysqli_fetch_assoc($userdata);
+
+    // Get absen user
+    $absen_user = $db->get("SELECT form_id, nama_matkul, kelas, pertemuan, tanggal, program_studi, qrcode
+    FROM absen_form_tbl
+    WHERE nip = '".$nip."'");
 } else{
     header("Location: ../../login.php");
 }
@@ -120,39 +126,55 @@ if($notification){
                     <div class="col-lg-12 main-chart">
                         <!--CUSTOM CHART START -->
 
-                        <div class="row mt">
-                            <!-- SERVER STATUS PANELS -->
-                            <!-- /col-md-8  -->
-                        </div>
                         <div class="row">
                             <!-- ABSEN PANEL -->
-                            <!-- <div class="col-md-4 mb"> -->
-                            <div class="col-md-4 mb">
-                                <!-- WHITE PANEL - TOP USER -->
-                                <div class="white-panel pn">
-                                    <div class="white-header">
-                                        <h5>@Nama Mata Kuliah</h5>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <p><img src="../../img/code.png" width="80"></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="text-left">
-                                                <p>Pertemuan Ke : </p>
-                                                <p>Tanggal : </p>
-                                                <p>Departemen : </p>
+                            <?php
+                            // If there is absen, ...
+                            if($absen_user){
+                                while ($row = mysqli_fetch_assoc($absen_user)){
+                                $qrcode = $row['qrcode'];
+                                ?>
+                                    <div class="col-md-4 mb">
+                                        <!-- WHITE PANEL - TOP USER -->
+                                        <div class="white-panel pn">
+                                            <div class="white-header">
+                                                <h5><?php echo $row['nama_matkul']." Kelas ".$row['kelas']?></h5>
                                             </div>
+                                            <br>
+
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <p><?php echo '<img src="process/make_qrcode.php?id='.$qrcode.'" width="80"/>';?></p>
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <div class="text-left">
+                                                        <p>Pertemuan Ke : <?php echo $row['pertemuan']?></p>
+                                                        <p>Tanggal : <?php echo $row['tanggal']?></p>
+                                                        <p>Program Studi : <?php echo $row['program_studi']?></p>
+                                                    </div>
+                                                </div>
+                                            </div> <br>
+
+                                            <form action="" method="post">
+                                                <input type="hidden" name="form_id" value="<?php echo $row['form_id']?>">
+                                                <button class="btn btn-small btn-theme03">Lihat absen</button>
+                                            </form>
                                         </div>
-                                    </div> <br>
-
-                                    <a class="logout" href="view_absen.php">
-                                        <button class="btn btn-small btn-theme03">Lihat absen</button>
-                                    </a>
+                                    </div>
+                                    <?php
+                                }
+                            } else{ // If there is no absen, ...
+                                ?>
+                                <div class="text-center">
+                                    <h4>
+                                        Tidak ada absen.
+                                        <br>
+                                        <a href="add_absen.php">Tambahkan absen</a>
+                                    </h4>
                                 </div>
-                            </div>
-
+                                <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
