@@ -7,6 +7,9 @@ $db = new Database();
 $nip = (isset($_SESSION['nim_nip'])) ? $_SESSION['nim_nip'] : "";
 $token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";
 
+// Get form id
+$form_id = $_POST['form_id'];
+
 if($token && $nip){
     // Query dosen
     $result = $db->execute("SELECT * FROM dosen_tbl
@@ -18,11 +21,29 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
         header("Location: ../../login.php");
     }
 
+    // Get user data
     $userdata = $db->get("SELECT nip, nama_lengkap
     FROM dosen_tbl
     WHERE nip = '".$nip."'");
 
     $userdata = mysqli_fetch_assoc($userdata);
+
+    if (isset($form_id)) {
+        // Get absen data
+        $absen_data = $db->get("SELECT form_id, nama_matkul, kelas, pertemuan, tanggal, program_studi, qrcode
+    FROM absen_form_tbl
+    WHERE nip = '" . $nip . "' AND form_id = " . $form_id);
+
+        $absen_data = mysqli_fetch_assoc($absen_data);
+
+        // Get attendance data
+        $attendance_data = $db->get("SELECT mahasiswa_tbl.nim as nim,
+mahasiswa_tbl.nama_lengkap as nama_lengkap,
+kehadiran_tbl.tanggal_absen as tanggal_absen
+FROM mahasiswa_tbl, kehadiran_tbl,dosen_tbl
+WHERE kehadiran_tbl.form_id = " . $form_id . " AND 
+dosen_tbl.nip = '" . $nip . "'");
+    }
 } else{
     header("Location: ../../login.php");
 }
@@ -126,18 +147,18 @@ if($notification){
                             <div class="white-panel pn">
                                 <div class="white-header">
                                     <br>
-                                    <h5>@Nama Mata Kuliah</h5>
+                                    <h5><?php echo $absen_data['nama_matkul']." Kelas ".$absen_data['kelas']?></h5>
                                 </div>
                                 <br><br>
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <p><img src="../../img/code.png" width="80"></p>
+                                        <p><img src="<?php echo "process/make_qrcode.php?id=".$absen_data['qrcode']?>" width="80"></p>
                                     </div>
                                     <div class="col-md-5">
                                         <div class="text-left">
-                                            <p>Pertemuan Ke : </p>
-                                            <p>Tanggal : </p>
-                                            <p>Departemen : </p>
+                                            <p>Pertemuan Ke : <?php echo $absen_data['pertemuan']?></p>
+                                            <p>Tanggal : <?php echo $absen_data['tanggal']?></p>
+                                            <p>Program Studi : <?php echo $absen_data['program_studi']?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -168,12 +189,22 @@ if($notification){
                             </thead>
 
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>D1211181001</td>
-                                <td>Alfian Aldy Hamdani</td>
-                                <td>1</td>
-                            </tr>
+                            <?php
+                            if($attendance_data) {
+                                $i = 0;
+                                while ($row = mysqli_fetch_assoc($attendance_data)) {
+                                    $i++;
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $i?></td>
+                                        <td><?php echo $row['nim']?></td>
+                                        <td><?php echo $row['nama_lengkap']?></td>
+                                        <td><?php echo $row['tanggal_absen']?></td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>

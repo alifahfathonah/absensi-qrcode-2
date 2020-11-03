@@ -144,7 +144,7 @@ if($notification){
 
                                             <div class="row">
                                                 <div class="col-md-5">
-                                                    <p><?php echo '<img src="process/make_qrcode.php?id='.$qrcode.'" width="80"/>';?></p>
+                                                    <p><img src="<?php echo "process/make_qrcode.php?id=$qrcode"?>" width="80"></p>
                                                 </div>
                                                 <div class="col-md-5">
                                                     <div class="text-left">
@@ -155,7 +155,7 @@ if($notification){
                                                 </div>
                                             </div> <br>
 
-                                            <form action="" method="post">
+                                            <form action="view_absen.php" method="post">
                                                 <input type="hidden" name="form_id" value="<?php echo $row['form_id']?>">
                                                 <button class="btn btn-small btn-theme03">Lihat absen</button>
                                             </form>
