@@ -26,24 +26,25 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
         header("Location: ../../login.php");
     }
 
-
     if(isset($nama_matkul) && isset($kelas) && isset($program_studi) &&
         isset($pertemuan) && isset($tanggal)){
 
         $qrcode = "$nama_matkul+$kelas+$program_studi+$pertemuan+$tanggal";
-        echo $qrcode;
+//        echo $qrcode;
+//        echo '<br><img src="make_qrcode.php?id='.$qrcode.'"/>';
 
-//        $add_form = $db->execute("INSERT INTO absen_form_tbl(nip, nama_matkul, kelas, program_studi, pertemuan, tanggal, qrcode)
-//VALUES('".$nip."', '".$nama_matkul."', '".$kelas."',
-//'".$program_studi."', '".$tanggal."', )")
+        $add_form = $db->execute("INSERT INTO absen_form_tbl(nip, nama_matkul, kelas, program_studi, pertemuan, tanggal, qrcode)
+VALUES('".$nip."', '".$nama_matkul."', '".$kelas."',
+'".$pertemuan."', '".$program_studi."', '".$tanggal."', '".$qrcode."')");
+
+        if($add_form){
+            $_SESSION['notification'] = "Berhasil menambah absen";
+        } else{
+            $_SESSION['notification'] = "Gagal menambah absen";
+        }
     }
 } else{
     header("Location: ../../login.php");
 }
 
-$notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] : "";
-
-if($notification){
-    echo $notification;
-    unset($_SESSION['notification']);
-}
+header("Location: ../dashboarddosen.php");
