@@ -28,7 +28,8 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
     // Get absen user
     $absen_user = $db->get("SELECT form_id, nama_matkul, kelas, pertemuan, tanggal, program_studi, qrcode
     FROM absen_form_tbl
-    WHERE nip = '".$nip."'");
+    WHERE nip = '".$nip."'
+    ORDER BY form_id DESC");
 } else{
     header("Location: ../../login.php");
 }
