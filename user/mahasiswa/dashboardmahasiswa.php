@@ -120,7 +120,7 @@ if($notification){
             <div class="col-md-12 col-sm-4 mb">
                 <div class="green-panel">
                     <div class="green-header">
-                        <h3>Click QR Below</h3>
+                        <h3>Click QR Below to Scan</h3>
                         <p>
                             <a href="#" id="btn-scan-qr">
                                 <img src="../../img/code.png" width="100">
@@ -130,15 +130,14 @@ if($notification){
                         <canvas hidden="" id="qr-canvas"></canvas>
                         <br>
                         <div class="text-center" id="qr-result">
-                            <form method="post" action="">
+                            <form method="post" action="process/submit_qrcode.php">
                                 <p>
                                     <label>
                                         Data:
-                                        <input class="form-control" id="outputData" type="text" name="data_qrcode" placeholder="Insert QR text" value="">
+                                        <input class="form-control" id="outputData" type="text" name="data_qrcode" placeholder="Insert QR text" value="" required>
                                     </label>
-<!--                                    <span id="outputData"></span>-->
                                 </p>
-                                <p class="mb">
+                                <p>
                                     <button class="btn btn-small btn-theme03">SUBMIT</button>
                                 </p>
                             </form>
