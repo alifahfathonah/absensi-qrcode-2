@@ -137,7 +137,7 @@ if($notification){
 
 <!--                                KELAS-->
                                 <div class="form-group ">
-                                    <label for="ccomment" class="control-label col-lg-2">Kelas </label>
+                                    <label for="comment" class="control-label col-lg-2">Kelas </label>
                                     <div class="col-lg-10">
                                         <select class="form-control" name="kelas" required>
                                             <option value="a">A</option>

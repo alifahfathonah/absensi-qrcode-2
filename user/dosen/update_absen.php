@@ -28,6 +28,17 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
     $userdata = mysqli_fetch_assoc($userdata);
 
     if (isset($form_id)) {
+        // If delete absen, ...
+        if(isset($_POST['delete'])){
+            $delete_absen = $db->execute("DELETE FROM absen_form_tbl WHERE form_id = $form_id");
+
+            if($delete_absen){
+                $_SESSION['notification'] = "Absen berhasil didelete";
+                header("Location: dashboarddosen.php");
+            } else{
+                $_SESSION['notification'] = "Absen gagal didelete";
+            }
+        }
         // Get absen data
         $absen_data = $db->get("SELECT form_id, nama_matkul, kelas, pertemuan, tanggal, program_studi, qrcode
         FROM absen_form_tbl
@@ -138,7 +149,7 @@ if($notification){
 
 <!--                            FORM-->
                             <form class="cmxform form-horizontal style-form"
-                                  id="commentForm" method="post" action="">
+                                  id="commentForm" method="post" action="process/update_absen_process.php">
 
 <!--                                NAMA MATKUL-->
                                 <div class="form-group ">
@@ -150,7 +161,7 @@ if($notification){
 
 <!--                                KELAS-->
                                 <div class="form-group ">
-                                    <label for="ccomment" class="control-label col-lg-2">Kelas </label>
+                                    <label for="comment" class="control-label col-lg-2">Kelas </label>
                                     <div class="col-lg-10">
                                         <select class="form-control" name="kelas" required>
                                             <?php
@@ -208,6 +219,7 @@ if($notification){
 
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
+                                        <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
                                         <button class="btn btn-theme" type="submit">Update</button>
                                         <button class="btn btn-theme04" type="button">Cancel</button>
                                     </div>
