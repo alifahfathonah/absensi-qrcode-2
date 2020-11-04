@@ -21,7 +21,6 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
         header("Location: ../../login.php");
     }
 
-    // Get user data
     $userdata = $db->get("SELECT nip, nama_lengkap
     FROM dosen_tbl
     WHERE nip = '".$nip."'");
@@ -31,20 +30,10 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
     if (isset($form_id)) {
         // Get absen data
         $absen_data = $db->get("SELECT form_id, nama_matkul, kelas, pertemuan, tanggal, program_studi, qrcode
-    FROM absen_form_tbl
-    WHERE nip = '" . $nip . "' AND form_id = " . $form_id);
+        FROM absen_form_tbl
+        WHERE nip = '" . $nip . "' AND form_id = " . $form_id);
 
         $absen_data = mysqli_fetch_assoc($absen_data);
-
-        // Get attendance data
-        $attendance_data = $db->get("SELECT mahasiswa_tbl.nim as nim,
-mahasiswa_tbl.nama_lengkap as nama_lengkap,
-kehadiran_tbl.tanggal_absen as tanggal_absen
-FROM mahasiswa_tbl, kehadiran_tbl,dosen_tbl
-WHERE kehadiran_tbl.form_id = " . $form_id . " AND 
-kehadiran_tbl.nim = mahasiswa_tbl.nim AND
-dosen_tbl.nip = '" . $nip . "'
-ORDER BY kehadiran_tbl.tanggal_absen ASC");
     }
 } else{
     header("Location: ../../login.php");
@@ -57,6 +46,7 @@ if($notification){
     unset($_SESSION['notification']);
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -138,94 +128,104 @@ if($notification){
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <div class="row">
-                <div class="col-lg-12 main-chart">
-                    <!--CUSTOM CHART START -->
-                    <div class="row">
-                        <!-- ABSEN PANEL -->
-                        <!-- <div class="col-md-4 mb"> -->
-                        <div class="col-md-4 mb">
-                            <!-- WHITE PANEL - TOP USER -->
-                            <div class="white-panel pn">
-                                <div class="white-header">
-                                    <h5><?php echo $absen_data['nama_matkul']." Kelas ".$absen_data['kelas']?></h5>
+            <!-- /row -->
+            <!-- FORM VALIDATION -->
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <h4><i class="fa fa-angle-right"></i> Update Absen </h4>
+                    <div class="form-panel">
+                        <div class=" form">
+
+<!--                            FORM-->
+                            <form class="cmxform form-horizontal style-form"
+                                  id="commentForm" method="post" action="">
+
+<!--                                NAMA MATKUL-->
+                                <div class="form-group ">
+                                    <label for="comment" class="control-label col-lg-2">Nama Mata Kuliah </label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" type="text" name="nama_matkul" value="<?php echo $absen_data['nama_matkul']?>" required>
+                                    </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <p><img src="<?php echo "process/make_qrcode.php?id=".$absen_data['qrcode']?>" width="80"></p>
+<!--                                KELAS-->
+                                <div class="form-group ">
+                                    <label for="ccomment" class="control-label col-lg-2">Kelas </label>
+                                    <div class="col-lg-10">
+                                        <select class="form-control" name="kelas" required>
+                                            <?php
+                                            switch ($absen_data['kelas']){
+                                                case "a":
+                                                    ?>
+                                                    <option value="a" selected>A</option>
+                                                    <option value="b">B</option>
+                                                    <option value="c">C</option>
+                                                    <?php
+                                                    break;
+                                                case "b":
+                                                    ?>
+                                                    <option value="a">A</option>
+                                                    <option value="b" selected>B</option>
+                                                    <option value="c">C</option>
+                                                    <?php
+                                                    break;
+                                                case "c":
+                                                    ?>
+                                                    <option value="a">A</option>
+                                                    <option value="b">B</option>
+                                                    <option value="c" selected>C</option>
+                                                    <?php
+                                                    break;
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
-                                    <div class="col-md-5">
-                                        <div class="text-left">
-                                            <p>Pertemuan Ke : <?php echo $absen_data['pertemuan']?></p>
-                                            <p>Tanggal : <?php echo $absen_data['tanggal']?></p>
-                                            <p>Program Studi : <?php echo $absen_data['program_studi']?></p>
-                                        </div>
-                                    </div>
-                                </div> <br>
-
-                                <div class="row">
-                                    <form action="update_absen.php" method="post">
-                                        <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
-                                        <button class="btn btn-small btn-theme03" name="edit">Update absen</button>
-                                        <button class="btn btn-small btn-theme04" name="delete">Delete absen</button>
-                                    </form>
                                 </div>
 
-                            </div>
+<!--                                DEPARTEMEN-->
+                                <div class="form-group ">
+                                    <label for="comment" class="control-label col-lg-2">Program Studi</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" type="text" name="program_studi" value="<?php echo $absen_data['program_studi']?>" required>
+                                    </div>
+                                </div>
+
+<!--                                PERTEMUAN-->
+                                <div class="form-group ">
+                                    <label for="comment" class="control-label col-lg-2">Pertemuan </label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" type="number" name="pertemuan" value="<?php echo $absen_data['pertemuan']?>" required>
+                                    </div>
+                                </div>
+
+<!--                                TANGGAL-->
+                                <div class="form-group ">
+                                    <label for="comment" class="control-label col-lg-2">Tanggal </label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control" type="date" name="tanggal" value="<?php echo $absen_data['tanggal']?>" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <button class="btn btn-theme" type="submit">Update</button>
+                                        <button class="btn btn-theme04" type="button">Cancel</button>
+                                    </div>
+                                </div>
+
+                            </form>
                         </div>
                     </div>
+                    <!-- /form-panel -->
                 </div>
-            </div>
-            <!-- /row -->
-
-            <!--main content end-->
-
-            <!--main content start-->
-            <!-- row -->
-            <div class="row mt">
-                <div class="col-md-12">
-                    <div class="content-panel">
-                        <table class="table table-striped table-advance table-hover">
-                            <h4><i class="fa fa-angle-right"></i> Detail Absen </h4>
-                            <hr>
-                            <thead>
-                            <tr>
-                                <th> NO </th>
-                                <th><i class=""></i>NIM</th>
-                                <th><i class=""></i>Nama Mahasiswa</th>
-                                <th><i class=""></i>Tanggal Absen</th>
-                            </tr>
-                            </thead>
-
-                            <tbody>
-                            <?php
-                            if($attendance_data) {
-                                $i = 0;
-                                while ($row = mysqli_fetch_assoc($attendance_data)) {
-                                    $i++;
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $i?></td>
-                                        <td><?php echo $row['nim']?></td>
-                                        <td><?php echo $row['nama_lengkap']?></td>
-                                        <td><?php echo $row['tanggal_absen']?></td>
-                                    </tr>
-                                    <?php
-                                }
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!-- /content-panel -->
-                </div>
-                <!-- /col-md-12 -->
+                <!-- /col-lg-12 -->
             </div>
             <!-- /row -->
         </section>
+        <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
+    <!--main content end-->
 
     <!--footer start-->
     <footer class="site-footer">

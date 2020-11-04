@@ -140,7 +140,6 @@ if($notification){
                                             <div class="white-header">
                                                 <h5><?php echo $row['nama_matkul']." Kelas ".$row['kelas']?></h5>
                                             </div>
-                                            <br>
 
                                             <div class="row">
                                                 <div class="col-md-5">
@@ -155,10 +154,12 @@ if($notification){
                                                 </div>
                                             </div> <br>
 
-                                            <form action="view_absen.php" method="post">
-                                                <input type="hidden" name="form_id" value="<?php echo $row['form_id']?>">
-                                                <button class="btn btn-small btn-theme03">Lihat absen</button>
-                                            </form>
+                                            <div class="row">
+                                                <form action="view_absen.php" method="post">
+                                                    <input type="hidden" name="form_id" value="<?php echo $row['form_id']?>">
+                                                    <button class="btn btn-small btn-theme03">Lihat absen</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                     <?php

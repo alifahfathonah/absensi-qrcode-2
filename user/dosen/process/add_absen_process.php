@@ -29,7 +29,7 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
     if(isset($nama_matkul) && isset($kelas) && isset($program_studi) &&
         isset($pertemuan) && isset($tanggal)){
 
-        $qrcode = "$nama_matkul+$kelas+$program_studi+$pertemuan+$tanggal";
+        $qrcode = "$nama_matkul $kelas $program_studi $pertemuan $tanggal";
 //        echo $qrcode;
 //        echo '<br><img src="make_qrcode.php?id='.$qrcode.'"/>';
 
