@@ -42,7 +42,9 @@ mahasiswa_tbl.nama_lengkap as nama_lengkap,
 kehadiran_tbl.tanggal_absen as tanggal_absen
 FROM mahasiswa_tbl, kehadiran_tbl,dosen_tbl
 WHERE kehadiran_tbl.form_id = " . $form_id . " AND 
-dosen_tbl.nip = '" . $nip . "'");
+kehadiran_tbl.nim = mahasiswa_tbl.nim AND
+dosen_tbl.nip = '" . $nip . "'
+ORDER BY kehadiran_tbl.tanggal_absen ASC");
     }
 } else{
     header("Location: ../../login.php");
