@@ -31,13 +31,23 @@ WHERE nip = '".$nim."' AND token = '".$token."'");
         // Get query
         $check_qrcode = mysqli_fetch_assoc($check_qrcode);
 
-        $insert_mhs = $db->execute("INSERT INTO kehadiran_tbl(form_id, nim, tanggal_absen)
-VALUES('".$check_qrcode['form_id']."', '".$nim."', NOW())");
+        $check_mhs = $db->get("SELECT nim
+FROM kehadiran_tbl
+WHERE form_id='".$check_qrcode['form_id']."' AND
+nim = '".$nim."'");
 
-        if($insert_mhs){
-            $_SESSION['notification'] = "Anda sudah dinyatakan hadir";
-        } else{
-            $_SESSION['notification'] = "Gagal hadir";
+        // If there is no result, insert mhs into absen
+        if(mysqli_fetch_row($check_mhs) == 0) {
+            $insert_mhs = $db->execute("INSERT INTO kehadiran_tbl(form_id, nim, tanggal_absen)
+VALUES('" . $check_qrcode['form_id'] . "', '" . $nim . "', NOW())");
+
+            if ($insert_mhs) {
+                $_SESSION['notification'] = "Anda sudah dinyatakan hadir";
+            } else {
+                $_SESSION['notification'] = "Gagal hadir";
+            }
+        } else{ // If there is result, don't let mahasiswa insert another
+            $_SESSION['notification'] = "Anda sudah mengisi absen ini";
         }
     } else{ // else, ...
         $_SESSION['notification'] = "QRCode Salah";
