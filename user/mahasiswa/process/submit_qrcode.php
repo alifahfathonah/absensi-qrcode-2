@@ -42,12 +42,12 @@ nim = '".$nim."'");
 VALUES('" . $check_qrcode['form_id'] . "', '" . $nim . "', NOW())");
 
             if ($insert_mhs) {
-                $_SESSION['notification'] = "Anda sudah dinyatakan hadir";
+                $_SESSION['notification'] = "Anda dinyatakan hadir";
             } else {
                 $_SESSION['notification'] = "Gagal hadir";
             }
         } else{ // If there is result, don't let mahasiswa insert another
-            $_SESSION['notification'] = "Anda sudah mengisi absen ini";
+            $_SESSION['notification'] = "Anda tidak dapat melakukan scan QRCode yang sama karena Anda sudah mengisi absen ini";
         }
     } else{ // else, ...
         $_SESSION['notification'] = "QRCode Salah";

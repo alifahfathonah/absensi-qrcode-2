@@ -30,7 +30,7 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
     if(isset($nama_matkul) && isset($kelas) && isset($program_studi) &&
         isset($pertemuan) && isset($tanggal)){
 
-        $qrcode = "$nama_matkul $kelas $program_studi $pertemuan $tanggal";
+        $qrcode = md5("$nama_matkul $kelas $program_studi $pertemuan $tanggal");
 
         $update_form = $db->execute("UPDATE absen_form_tbl
         SET nama_matkul = '".$nama_matkul."',

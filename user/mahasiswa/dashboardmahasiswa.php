@@ -123,7 +123,7 @@ if($notification){
                         <h3>Click QR Below to Scan</h3>
                         <p>
                             <a href="#" id="btn-scan-qr">
-                                <img src="../../img/code.png" width="100">
+                                <img src="../../assets/img/scan-me.png" width="100">
                             </a>
                         </p>
 
