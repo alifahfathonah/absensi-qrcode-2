@@ -129,14 +129,19 @@ if($notification){
 
                         <canvas hidden="" id="qr-canvas"></canvas>
                         <br>
-                        <div hidden="" class="text-center" id="qr-result">
-                            <p>
-                                Data:
-                                <span id="outputData"></span>
-                            </p>
-                            <p class="mb">
-                                <button class="btn btn-small btn-theme03">SUBMIT</button>
-                            </p>
+                        <div class="text-center" id="qr-result">
+                            <form method="post" action="">
+                                <p>
+                                    <label>
+                                        Data:
+                                        <input class="form-control" id="outputData" type="text" name="data_qrcode" placeholder="Insert QR text" value="">
+                                    </label>
+<!--                                    <span id="outputData"></span>-->
+                                </p>
+                                <p class="mb">
+                                    <button class="btn btn-small btn-theme03">SUBMIT</button>
+                                </p>
+                            </form>
                         </div>
                     </div>
                 </div>

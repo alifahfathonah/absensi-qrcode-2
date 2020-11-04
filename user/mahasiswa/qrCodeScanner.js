@@ -14,7 +14,7 @@ let scanning = false;
 qrcodes.callback = res => {
     // If result is true, ...
     if(res){
-        outputData.innerText = res;
+        outputData.value = res;
         scanning = false;
 
         // Stop video
