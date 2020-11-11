@@ -149,7 +149,7 @@ if($notification){
                     <div class="row">
                         <!-- ABSEN PANEL -->
                         <!-- <div class="col-md-4 mb"> -->
-                        <div class="col-md-4 mb">
+                        <div class="col-md-5 mb">
                             <!-- WHITE PANEL - TOP USER -->
                             <div class="white-panel pn">
                                 <div class="white-header">

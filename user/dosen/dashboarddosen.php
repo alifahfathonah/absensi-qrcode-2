@@ -148,9 +148,11 @@ if($notification){
                                                 </div>
                                                 <div class="col-md-5">
                                                     <div class="text-left">
+                                                        <div class="dee">
                                                         <p>Pertemuan Ke : <?php echo $row['pertemuan']?></p>
                                                         <p>Tanggal : <?php echo $row['tanggal']?></p>
                                                         <p>Program Studi : <?php echo $row['program_studi']?></p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div> <br>

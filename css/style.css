@@ -1320,7 +1320,7 @@ PANELS CONFIGURATIONS
     width: 100%
 }
 
-input .form-control{
+input .form-control {
     display: block;
     width: 100%;
     margin-top: 5px;
@@ -3523,4 +3523,10 @@ ul.chat-available-user li a:hover {
 }
 #copyrights a {
     color: #fff;
+}
+.dee {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
