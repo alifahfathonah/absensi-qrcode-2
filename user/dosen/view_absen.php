@@ -8,7 +8,7 @@ $nip = (isset($_SESSION['nim_nip'])) ? $_SESSION['nim_nip'] : "";
 $token = (isset($_SESSION['token'])) ? $_SESSION['token'] : "";
 
 // Get form id
-$form_id = $_POST['form_id'];
+$form_id = $_GET['form_id'];
 
 if($token && $nip){
     // Query dosen
@@ -34,10 +34,11 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
     FROM absen_form_tbl
     WHERE nip = '" . $nip . "' AND form_id = " . $form_id);
 
-        $absen_data = mysqli_fetch_assoc($absen_data);
+        if($absen_data) {
+            $absen_data = mysqli_fetch_assoc($absen_data);
 
-        // Get attendance data
-        $attendance_data = $db->get("SELECT mahasiswa_tbl.nim as nim,
+            // Get attendance data
+            $attendance_data = $db->get("SELECT mahasiswa_tbl.nim as nim,
 mahasiswa_tbl.nama_lengkap as nama_lengkap,
 kehadiran_tbl.tanggal_absen as tanggal_absen
 FROM mahasiswa_tbl, kehadiran_tbl,dosen_tbl
@@ -45,6 +46,10 @@ WHERE kehadiran_tbl.form_id = " . $form_id . " AND
 kehadiran_tbl.nim = mahasiswa_tbl.nim AND
 dosen_tbl.nip = '" . $nip . "'
 ORDER BY kehadiran_tbl.tanggal_absen ASC");
+        } else{
+            $_SESSION['notification'] = "Absen tidak ditemukan";
+            header("Location: dashboarddosen.php");
+        }
     }
 } else{
     header("Location: ../../login.php");

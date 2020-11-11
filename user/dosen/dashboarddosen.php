@@ -156,7 +156,7 @@ if($notification){
                                             </div> <br>
 
                                             <div class="row">
-                                                <form action="view_absen.php" method="post">
+                                                <form action="view_absen.php" method="get">
                                                     <input type="hidden" name="form_id" value="<?php echo $row['form_id']?>">
                                                     <button class="btn btn-small btn-theme03">Lihat absen</button>
                                                 </form>
