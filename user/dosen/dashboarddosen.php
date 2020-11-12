@@ -66,6 +66,7 @@ if($notification){
     <link rel="stylesheet" type="text/css" href="../../lib/gritter/css/jquery.gritter.css" />
     <!-- Custom styles for this template -->
     <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/style2.css" rel="stylesheet">
     <link href="../../css/style-responsive.css" rel="stylesheet">
     <script src="../../lib/chart-master/Chart.js"></script>
 
@@ -139,20 +140,18 @@ if($notification){
                                         <!-- WHITE PANEL - TOP USER -->
                                         <div class="white-panel pn">
                                             <div class="white-header">
-                                                <h5><?php echo $row['nama_matkul']." Kelas ".$row['kelas']?></h5>
+                                                <h5 class="preview-title"><?php echo $row['nama_matkul']." Kelas ".$row['kelas']?></h5>
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-md-5">
-                                                    <p><img src="<?php echo "process/make_qrcode.php?id=$qrcode"?>" width="80"></p>
+                                                    <img src="<?php echo "process/make_qrcode.php?id=$qrcode"?>" width="80">
                                                 </div>
-                                                <div class="col-md-5">
+                                                <div class="col-md-7">
                                                     <div class="text-left">
-                                                        <div class="dee">
-                                                        <p>Pertemuan Ke : <?php echo $row['pertemuan']?></p>
-                                                        <p>Tanggal : <?php echo $row['tanggal']?></p>
-                                                        <p>Program Studi : <?php echo $row['program_studi']?></p>
-                                                        </div>
+                                                        <p class="preview-text">Pertemuan Ke : <?php echo $row['pertemuan']?></p>
+                                                        <p class="preview-text">Tanggal : <?php echo $row['tanggal']?></p>
+                                                        <p class="preview-text">Program Studi : <?php echo $row['program_studi']?></p>
                                                     </div>
                                                 </div>
                                             </div> <br>
