@@ -138,7 +138,7 @@ if($notification){
                                 ?>
                                     <div class="col-md-4 mb">
                                         <!-- WHITE PANEL - TOP USER -->
-                                        <div class="white-panel pn">
+                                        <div class="white-panel">
                                             <div class="white-header">
                                                 <h5 class="preview-title"><?php echo $row['nama_matkul']." Kelas ".$row['kelas']?></h5>
                                             </div>
@@ -159,7 +159,7 @@ if($notification){
                                             <div class="row">
                                                 <form action="view_absen.php" method="get">
                                                     <input type="hidden" name="form_id" value="<?php echo $row['form_id']?>">
-                                                    <button class="btn btn-small btn-theme03">Lihat absen</button>
+                                                    <button class="button btn-small btn-theme03">Lihat absen</button>
                                                 </form>
                                             </div>
                                         </div>
