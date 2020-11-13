@@ -29,6 +29,7 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
     $userdata = mysqli_fetch_assoc($userdata);
 
     if (isset($form_id)) {
+        
         // Get absen data
         $absen_data = $db->get("SELECT form_id, nama_matkul, kelas, pertemuan, tanggal, program_studi, qrcode
     FROM absen_form_tbl
@@ -50,7 +51,10 @@ ORDER BY kehadiran_tbl.tanggal_absen ASC");
             $_SESSION['notification'] = "Absen tidak ditemukan";
             header("Location: dashboarddosen.php");
         }
+    }else{
+        header("Location: dashboarddosen.php");
     }
+
 } else{
     header("Location: ../../login.php");
 }
@@ -170,7 +174,12 @@ if($notification){
                                         <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
                                         <button class="button btn-small btn-theme03" name="edit">Update absen</button>
                                         <button class="button btn-small btn-theme04" name="delete">Delete absen</button>
-                                    </form>
+                                        </form>
+                                        <form action="process/export_absen.php" method="get">
+    <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
+    <button class="button btn-small btn-theme06" name="export">Export absen</button>
+</form>
+                                    
                                 </div>
                             </div>
                                 </div>
