@@ -86,6 +86,7 @@ if($notification){
     <link rel="stylesheet" type="text/css" href="../../lib/gritter/css/jquery.gritter.css" />
     <!-- Custom styles for this template -->
     <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../css/style2.css" rel="stylesheet">
     <link href="../../css/style-responsive.css" rel="stylesheet">
     <script src="../../lib/chart-master/Chart.js"></script>
 
@@ -149,35 +150,32 @@ if($notification){
                     <div class="row">
                         <!-- ABSEN PANEL -->
                         <!-- <div class="col-md-4 mb"> -->
-                        <div class="col-md-5 mb">
+                        <!-- <div class="col-md-5 mb"> -->
                             <!-- WHITE PANEL - TOP USER -->
-                            <div class="white-panel pn">
-                                <div class="white-header">
-                                    <h5><?php echo $absen_data['nama_matkul']." Kelas ".$absen_data['kelas']?></h5>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <p><img src="<?php echo "process/make_qrcode.php?id=".$absen_data['qrcode']?>" width="80"></p>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="text-left">
-                                            <p>Pertemuan Ke : <?php echo $absen_data['pertemuan']?></p>
-                                            <p>Tanggal : <?php echo $absen_data['tanggal']?></p>
-                                            <p>Program Studi : <?php echo $absen_data['program_studi']?></p>
+                            <!-- <div class="white-panel pn"> -->
+                                <!-- <div class="white-header"> -->
+                                <div class="col-md-12 col-sm-4 mb">
+                                    <div class="green-panel">
+                                    <div class="green-header">
+                                    <h3><strong><?php echo $absen_data['nama_matkul']." Kelas ".$absen_data['kelas']?></strong></h3></div>
+                                    <p class="fadilah"><img src="<?php echo "process/make_qrcode.php?id=".$absen_data['qrcode']?>" width="80"></p>
+                                    <!-- <div class="col-md-5"> -->
+                                        <div class="text-center">
+                                            <p class="fadilah">Pertemuan Ke : <?php echo $absen_data['pertemuan']?></p>
+                                            <p class="fadilah">Tanggal : <?php echo $absen_data['tanggal']?></p>
+                                            <p class="fadilah">Program Studi : <?php echo $absen_data['program_studi']?></p>
                                         </div>
-                                    </div>
-                                </div> <br>
-
-                                <div class="row">
+                                <!-- </div> <br> -->
                                     <form action="update_absen.php" method="post">
                                         <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
-                                        <button class="btn btn-small btn-theme03" name="edit">Update absen</button>
-                                        <button class="btn btn-small btn-theme04" name="delete">Delete absen</button>
+                                        <button class="button btn-small btn-theme03" name="edit">Update absen</button>
+                                        <button class="button btn-small btn-theme04" name="delete">Delete absen</button>
                                     </form>
                                 </div>
-
                             </div>
+                                </div>
+
+                            <!-- </div> -->
                         </div>
                     </div>
                 </div>

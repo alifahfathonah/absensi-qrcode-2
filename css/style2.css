@@ -1,4 +1,4 @@
-.preview-text{
+.preview-text {
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
@@ -6,7 +6,7 @@
     margin-right: 10px;
 }
 
-.preview-title{
+.preview-title {
     display: block;
     overflow: hidden;
     white-space: nowrap;
@@ -17,24 +17,29 @@
     margin-right: 15px;
 }
 
-.button{
-    display:inline-block;
-    padding:6px 12px;
-    margin:10px;
-    font-size:14px;
-    font-weight:400;
-    line-height:1.42857143;
-    text-align:center;
-    white-space:nowrap;
-    vertical-align:middle;
-    -ms-touch-action:manipulation;
-    touch-action:manipulation;
-    cursor:pointer;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
-    background-image:none;
-    border:1px solid transparent;
-    border-radius:4px
+.button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px
+}
+
+.fadilah {
+    color: black;
+    font-size: 20px;
 }
