@@ -174,7 +174,7 @@ if($notification){
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
                                         <button class="btn btn-theme" type="submit">Submit</button>
-                                        <button class="btn btn-theme04" type="button">Cancel</button>
+                                        <button class="btn btn-theme04" type="reset">Cancel</button>
                                     </div>
                                 </div>
 

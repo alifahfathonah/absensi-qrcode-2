@@ -220,8 +220,8 @@ if($notification){
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
                                         <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
-                                        <button class="btn btn-theme" type="submit">Update</button>
-                                        <button class="btn btn-theme04" type="button">Cancel</button>
+                                        <button class="btn btn-theme" type="submit" name="update">Update</button>
+                                        <button class="btn btn-theme04" type="submit" name="cancel">Cancel</button>
                                     </div>
                                 </div>
 

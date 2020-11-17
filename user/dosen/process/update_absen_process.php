@@ -27,8 +27,13 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
         header("Location: ../../login.php");
     }
 
+    if(isset($_POST['cancel'])){
+        $_SESSION['notification'] = "Tidak mengupdate absen";
+        header("Location: ../view_absen.php?form_id=$form_id");
+    }
+
     if(isset($nama_matkul) && isset($kelas) && isset($program_studi) &&
-        isset($pertemuan) && isset($tanggal)){
+        isset($pertemuan) && isset($tanggal) && isset($_POST['update'])){
 
         $qrcode = md5("$nama_matkul $kelas $program_studi $pertemuan $tanggal");
 
@@ -46,9 +51,8 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
         } else{
             $_SESSION['notification'] = "Gagal mengupdate absen";
         }
+        header("Location: ../dashboarddosen.php");
     }
 } else{
     header("Location: ../../login.php");
 }
-
-header("Location: ../dashboarddosen.php");
