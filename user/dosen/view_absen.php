@@ -60,11 +60,6 @@ ORDER BY kehadiran_tbl.tanggal_absen ASC");
 }
 
 $notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] : "";
-
-if($notification){
-    echo $notification;
-    unset($_SESSION['notification']);
-}
 ?>
 
 <!DOCTYPE html>
@@ -174,11 +169,11 @@ if($notification){
                                         <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
                                         <button class="button btn-small btn-theme03" name="edit">Update absen</button>
                                         <button class="button btn-small btn-theme04" name="delete">Delete absen</button>
-                                        </form>
-                                        <form action="process/export_absen.php" method="get">
-                                            <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
-                                            <button class="button btn-small btn-theme06" name="export">Export absen</button>
-                                        </form> 
+                                    </form>
+                                    <form action="process/export_absen.php" method="get">
+                                        <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
+                                        <button class="button btn-small btn-theme06" name="export">Export absen</button>
+                                    </form>
                                     
                                 </div>
                             </div>
@@ -315,6 +310,11 @@ if($notification){
         console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
     }
 </script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
+
+<?php
+$db->setNotification($notification);
+?>

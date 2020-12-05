@@ -51,7 +51,7 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
         } else{
             $_SESSION['notification'] = "Gagal mengupdate absen";
         }
-        header("Location: ../dashboarddosen.php");
+        header("Location: ../view_absen.php?form_id=$form_id");
     }
 } else{
     header("Location: ../../login.php");

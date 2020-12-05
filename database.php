@@ -36,13 +36,14 @@ class Database{
         return null;
     }
 
-    /**
-     * To get procedure from database
-     * @param $procedure
-     * @return bool|mysqli_result
-     */
-    function getProcedureExecute($procedure){
-        include "database_connect.php";
-        return mysqli_query($connection, "CALL " . $procedure);
+    function setNotification($notification){
+        if($notification){
+            echo "
+<script>
+    swal('$notification');
+</script>";
+
+            unset($_SESSION['notification']);
+        }
     }
 }

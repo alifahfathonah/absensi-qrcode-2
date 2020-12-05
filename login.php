@@ -31,12 +31,6 @@ if($token && $nim_nip){
 
 // Get notification
 $notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] : "";
-
-if($notification){
-    echo $notification;
-    unset($_SESSION['notification']);
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -141,6 +135,11 @@ if($notification){
         </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
+
+<?php
+$db->setNotification($notification);
+?>

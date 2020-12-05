@@ -35,12 +35,6 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
 }
 
 $notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] : "";
-
-if($notification){
-    echo $notification;
-    unset($_SESSION['notification']);
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -263,6 +257,11 @@ if($notification){
             console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
         }
     </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 
 </html>
+
+<?php
+$db->setNotification($notification);
+?>
