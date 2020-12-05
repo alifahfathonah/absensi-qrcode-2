@@ -34,6 +34,8 @@ VALUES('".$nim_nip."', '".$nama_lengkap."', '".$password."', '".$token."')");
             $_SESSION['notification'] = "Register user gagal";
         }
     }
+} else{
+    $_SESSION['notification'] = "Password tidak sama";
 }
 
 header("Location: ../login.php");
