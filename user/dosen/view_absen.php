@@ -168,8 +168,9 @@ $notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] :
                                 <form action="update_absen.php" method="post">
                                     <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
                                     <button class="button btn-small btn-theme03" name="edit">Update absen</button>
-                                    <button class="button btn-small btn-theme04" name="delete">Delete absen</button>
                                 </form>
+
+                                <button class="button btn-small btn-theme04" onclick="OnOneClick()">Delete absen</button>
 
                                 <form action="process/export_absen.php" method="get">
                                     <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
@@ -312,6 +313,22 @@ $notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] :
     }
 </script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    var OnOneClick = function() {
+        swal({
+            title: "Apakah anda yakin ingin menghapus absen ini?",
+            text: "Ketika sudah dihapus, anda tidak dapat memulihkan absen ini lagi!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    window.location.href = 'process/delete_absen_process.php?form_id=' + <?php echo $form_id?>
+                }
+            });
+    };
+</script>
 </body>
 
 </html>

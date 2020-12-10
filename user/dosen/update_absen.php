@@ -28,17 +28,6 @@ WHERE nip = '".$nip."' AND token = '".$token."'");
     $userdata = mysqli_fetch_assoc($userdata);
 
     if (isset($form_id)) {
-        // If delete absen, ...
-        if(isset($_POST['delete'])){
-            $delete_absen = $db->execute("DELETE FROM absen_form_tbl WHERE form_id = $form_id");
-
-            if($delete_absen){
-                $_SESSION['notification'] = "Absen berhasil didelete";
-                header("Location: dashboarddosen.php");
-            } else{
-                $_SESSION['notification'] = "Absen gagal didelete";
-            }
-        }
         // Get absen data
         $absen_data = $db->get("SELECT form_id, nama_matkul, kelas, pertemuan, tanggal, program_studi, qrcode
         FROM absen_form_tbl
