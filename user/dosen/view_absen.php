@@ -167,16 +167,17 @@ $notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] :
 
                                 <form action="update_absen.php" method="post">
                                     <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
-                                    <button class="button btn-small btn-theme03" name="edit">Update absen</button>
+                                    <button class="button btn-small btn-theme02" name="edit">Update absen</button>
                                 </form>
-
-                                <button class="button btn-small btn-theme04" onclick="OnOneClick()">Delete absen</button>
 
                                 <form action="process/export_absen.php" method="get">
                                     <input type="hidden" name="form_id" value="<?php echo $absen_data['form_id']?>">
-                                    <button class="button btn-small btn-theme06" name="export">Export absen</button>
+                                    <button class="button btn-small btn-theme02" name="export">Export absen</button>
                                 </form>
 
+                                <button class="button btn-small btn-theme04" onclick="OnOneClick()">
+                                    Delete absen
+                                </button>
                             </div>
                         </div>
                     </div>
