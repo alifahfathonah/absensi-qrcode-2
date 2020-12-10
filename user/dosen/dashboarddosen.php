@@ -88,7 +88,7 @@ $notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] :
             <div class="top-menu">
                 <ul class="nav pull-right top-menu">
                     <li><a class="logout" href="add_absen.php">+</a></li>
-                    <li><a class="logout" href="../logout.php">Logout</a></li>
+                    <li><a class="logout" id="logout" href="#">Logout</a></li>
                 </ul>
             </div>
         </header>
@@ -258,6 +258,24 @@ $notification = (isset($_SESSION['notification'])) ? $_SESSION['notification'] :
         }
     </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    var OnOneClick = function() {
+        swal({
+            title: "Apakah anda yakin ingin keluar?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((logout) => {
+                if (logout) {
+                    window.location.href = '../logout.php'
+                }
+            });
+    };
+
+    var OneClick = document.getElementById("logout");
+    OneClick.addEventListener('click', OnOneClick, false);
+</script>
 </body>
 
 </html>
